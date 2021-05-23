@@ -154,7 +154,7 @@ form{
   color: #eee;
   font-weight: 700;
   box-shadow: 1px 4px 10px 1px #aaa;
-  
+  cursor: pointer;
   background: #207cca; /* Old browsers */
   background: -moz-linear-gradient(left, #207cca 0%, #9f58a3 100%); /* FF3.6-15 */
   background: -webkit-linear-gradient(left, #365b7c 0%,#ac2a19 100%); /* Chrome10-25,Safari5.1-6 */
