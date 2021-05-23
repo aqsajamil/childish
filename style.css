@@ -5,15 +5,18 @@ body, html {
     text-decoration: none;
     list-style: none;
     box-sizing: border-box;
+    overflow-x: hidden;
   }
   .headtag h1{
     position: absolute;
     left: 50%;
-    color: red,green,blue;
-    
     transform: translate(-30%,-250%);
+    white-space: nowrap;
   }
   
+  .headtag{
+    position: relative;
+  }
   .hero-image {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("image/6.jpg");
     height: 60%;
@@ -205,17 +208,8 @@ div.desc {
     width: 49.99999%;
     margin: 6px 0;
   }
-  nav ul li a{
-    background: rgb(87, 6, 6);
-    color: white;
-    text-transform: uppercase;
-    padding: 0.6rem 1rem;
-    border-radius: 5px;
-}
-a.active,a:hover{
-  background: rgb(223, 28, 28);
-  color: white;
-}
+  
+
 }
 
 @media only screen and (max-width: 500px) {
@@ -251,14 +245,29 @@ a.active,a:hover{
     .menubar{
         display: block;
     }
-    ul{
-        position: fixed;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        transform: translateY(27%);
-        left: -100%;
-        transition: all .5s;
+    nav{
+      z-index: 100;
+    }
+    a.active,a:hover{
+      background: rgb(223, 28, 28);
+      color: white;
+    }
+    nav ul li a{
+      background: rgb(87, 6, 6);
+      color: white;
+      text-transform: uppercase;
+      padding: 0.6rem 1rem;
+      border-radius: 5px;
+  }
+    nav ul{
+      position: absolute !important;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      transform: translateY(10px);
+      right: -100%;
+      transition: all .5s;
+      z-index: 100;
     }
     nav ul li{
         transform: translateX(5%);
@@ -268,13 +277,21 @@ a.active,a:hover{
         top: -25%;
 
     }
+
     a.active,a:hover{
         background: rgb(223, 28, 28);
         color: white;
     }
     #box:checked~ul{
-        left: 0;
+        right: 0;
     }
+    
+    .headtag h1{
+      position: relative;
+      left: auto;
+      transform: none;
+      white-space: unset;
+  }
     
     
 
